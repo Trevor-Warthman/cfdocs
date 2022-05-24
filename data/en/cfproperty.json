@@ -71,5 +71,15 @@
 		"railo": {"minimum_version":"", "notes":"", "docs":"http://railodocs.org/index.cfm/tag/cfproperty"},
 		"openbd": {"minimum_version":"", "notes":"", "docs":"http://openbd.org/manual/?/tag/cfproperty"}
 	},
-	"links": []
+	"links": [],
+	"examples": 
+	[
+		{
+			"title": "Define, get, and set a cfproperty in cfscript",
+			"description": "Note Accessors='true' is used to make a getter and setter function available in the component scope, get[PROPERTY] and set[PROPERTY]. ",
+			"code": "component Moose extends=\"Animal\" accessors=\"true\" {\n\n    property numeric Age;\n\n    property string Name;\n\n    property plant Food;\n\n    public function init(){\n        setPlant(new Plant('grass'));\n        setAge(6);\n        setName('Jim');\n        return this;\n    }\n\n    public boolean function nameContainsJ() returnFormat=\"JSON\" {\n        return FindNoCase(getName(), \"J\");\n    }\n}",
+			"result": "",
+			"runnable": false
+		}
+	]
 }
